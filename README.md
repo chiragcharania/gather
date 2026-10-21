@@ -4,9 +4,15 @@
 
 Gather brings team channels, realtime messaging, private file sharing, and video meetings into one workspace. It is a personal portfolio project focused on connecting a React frontend to authenticated, event-driven backend services.
 
-[Source code](https://github.com/chiragcharania/gather) · [Report an issue](https://github.com/chiragcharania/gather/issues)
+[Live demo](https://gather-vert-alpha.vercel.app/) · [Source code](https://github.com/chiragcharania/gather) · [Report an issue](https://github.com/chiragcharania/gather/issues)
 
-**Status:** Working local MVP. Hosted demo deployment is the next step.
+**Status:** Live portfolio MVP, deployed on Vercel with Supabase and LiveKit Cloud.
+
+### Try it
+
+Open [Gather](https://gather-vert-alpha.vercel.app/) and select **Explore the demo first** for a preview without signing up. Demo messages are temporary; team management, file uploads, and meetings require an account.
+
+To try collaboration, create an account and a team, generate an invitation, and join with a second account in another browser profile. Open the same channel in both profiles to test realtime chat and meetings. Each invitation code is single-use and valid for 24 hours.
 
 ![Gather workspace showing team channels and realtime chat](docs/images/workspace.png)
 
@@ -175,7 +181,9 @@ The build runs TypeScript checking before generating `dist/`. The two unit tests
 
 To run the database smoke test in a development Supabase project, review and execute **all of `supabase/rls-smoke.sql`** as `postgres` after applying the schema. It creates temporary test data within a transaction and rolls back. Do not execute only part of the file.
 
-The original delivery checks and their environment limitations are recorded in [`VALIDATION.md`](VALIDATION.md). Hosted deployment, cross-device media behavior, and a full accessibility/security audit need further validation.
+**Hosted verification:** the app is deployed at [gather-vert-alpha.vercel.app](https://gather-vert-alpha.vercel.app/). Manual checks confirmed access to existing teams and messages and working hosted collaboration and meeting flows. These checks do not constitute an automated end-to-end test suite.
+
+The original delivery checks and their environment limitations are recorded in [`VALIDATION.md`](VALIDATION.md); that report predates the hosted setup. Cross-device media behavior and a full accessibility/security audit need further validation.
 
 The production build may warn that the meeting chunk exceeds 500 kB. This warning is non-fatal; the conferencing interface is loaded on demand.
 
@@ -187,6 +195,8 @@ The production build may warn that the meeting chunk exceeds 500 kB. This warnin
 2. Set the build command to `npm run build` and output directory to `dist`.
 3. Add `VITE_SUPABASE_URL`, `VITE_SUPABASE_ANON_KEY`, and `VITE_LIVEKIT_URL` as frontend environment variables.
 4. Deploy. The included `vercel.json` provides SPA fallback.
+
+This project's current deployment is [Gather on Vercel](https://gather-vert-alpha.vercel.app/). With the Git integration configured, successful builds from pushes to the production branch update the live app. Database schema changes, Edge Function updates, and function secrets must be applied separately.
 
 Netlify is also supported through `netlify.toml`. For other static HTTPS hosts, publish `dist/` and configure unknown paths to serve `index.html`.
 
