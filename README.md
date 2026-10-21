@@ -8,6 +8,8 @@ Gather brings team channels, realtime messaging, private file sharing, and video
 
 **Status:** Working local MVP. Hosted demo deployment is the next step.
 
+![Gather workspace showing team channels and realtime chat](docs/images/workspace.png)
+
 ## Features
 
 - **Authentication:** Email/password registration, sign-in, and persisted sessions through Supabase Auth.
@@ -19,6 +21,16 @@ Gather brings team channels, realtime messaging, private file sharing, and video
 - **Message search:** Filter the newest 200 loaded messages in the current channel.
 - **Responsive workspace:** Sidebar navigation and a collapsible channel menu for smaller screens.
 - **Credential-free demo:** Explore sample channels and send temporary messages without configuring external services.
+
+## Screenshots
+
+### Video meeting
+
+![Gather video meeting with participant tiles and meeting controls](docs/images/meeting.png)
+
+### Screen sharing
+
+![Screen sharing during a Gather meeting](docs/images/screen-sharing.png)
 
 ## Technology stack
 
@@ -219,5 +231,3 @@ The Chat navigation shortcut focuses the current channel composer; Meet joins th
 ## Author
 
 [Chirag Charania](https://github.com/chiragcharania)
-
-Gather uses original branding and is inspired by collaboration tools such as Microsoft Teams. It is not affiliated with Microsoft.
