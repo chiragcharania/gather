@@ -1,0 +1,5 @@
+project_id = "teams-personal"
+
+[functions.livekit-token]
+# Authenticate inside the function via auth.getUser; supports publishable keys too.
+verify_jwt = false
